@@ -1,8 +1,9 @@
 // Given a DNA strand, return its RNA complement (per RNA transcription).
 export function toRna(str){
+  str.toUpperCase();
   let res = '';
-  if (str.match(/[BD-FH-SU-Z]/)){
-    throw 'Invalid input DNA.';
+  if (str.match(/[^CGTA]/)){
+    throw new Error('Invalid input DNA.');
   } else {
     for(let c of str){
       res += transc(c);
