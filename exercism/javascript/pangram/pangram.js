@@ -1,9 +1,8 @@
 // Determine if a sentence is a pangram.
-const alph = "abcdefghijklmnopqrstuvwxyz";
+const ALPH = "abcdefghijklmnopqrstuvwxyz".split('');
 
 export function isPangram(string) {
-  var A = string.toLowerCase().replace(/\s+/g, '').split('');
-  var B = alph.split('');
-  var diff = B.filter(i => !A.includes(i));
-  return (diff.length === 0) ? true : false;
+  var a = string.toLowerCase().replace(/\s+/g, '').split('');
+  var diff = ALPH.filter(i => !a.includes(i));
+  return diff.length === 0;
 }
