@@ -6,3 +6,4 @@
 
 # Ignore node modules.
 **/node_modules
+**/reverse-string
