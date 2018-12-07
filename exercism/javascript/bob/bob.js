@@ -1,21 +1,17 @@
 // Bob is a lackadaisical teenager. In conversation, his responses are very limited.
 export const hey = message => {
   message = message.trim();
-  if (last(message) === "?" && letters(message)) {
+  if (message.endsWith("?") && hasNoLowercase(message)) {
     return "Calm down, I know what I'm doing!";
-  } else if (last(message) === "?") {
+  } else if (message.endsWith("?")) {
     return "Sure.";
-  } else if (letters(message)) {
+  } else if (hasNoLowercase(message)) {
     return "Whoa, chill out!";
   } else if (message === "") {
     return "Fine. Be that way!";
   } else return "Whatever.";
 };
 
-function last(str) {
-  return str[str.length - 1];
-}
-
-function letters(str) {
+function hasNoLowercase(str) {
   return str === str.toUpperCase() && str !== str.toLowerCase();
 }
