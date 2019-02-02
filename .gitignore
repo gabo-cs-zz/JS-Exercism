@@ -6,6 +6,6 @@
 
 # Ignore node modules.
 **/node_modules
-**/shell
+./shell
 **/.exercism
 
